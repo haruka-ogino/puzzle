@@ -10,7 +10,7 @@ export default function Puzzle() {
   //   ;[initialPieces[i], initialPieces[j]] = [initialPieces[j], initialPieces[i]]
   // }
 
-  const initialPieces = useState([1, 2, 3, 4, 5])
+  const initialPieces = [1, 2, 3, 4, 5]
 
   const [pieces, setPieces] = useState(initialPieces)
   const [board, setBoard] = useState([90, 90, 90, 90, 90])

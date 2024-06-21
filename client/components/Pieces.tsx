@@ -1,8 +1,8 @@
 interface Props {
   pieces: number[]
-  setPieces: React.Dispatch<React.SetStateAction<[number[]]>>
+  setPieces: React.Dispatch<React.SetStateAction<number[]>>
   board: number[]
-  setBoard: React.Dispatch<React.SetStateAction<[number[]]>>
+  setBoard: React.Dispatch<React.SetStateAction<number[]>>
 }
 export default function Pieces({ pieces, setPieces, board, setBoard }: Props) {
   return (

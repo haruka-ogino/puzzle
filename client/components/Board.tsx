@@ -2,9 +2,9 @@ import { useDrop } from 'react-dnd'
 
 interface Props {
   pieces: number[]
-  setPieces: React.Dispatch<React.SetStateAction<[number[]]>>
+  setPieces: React.Dispatch<React.SetStateAction<number[]>>
   board: number[]
-  setBoard: React.Dispatch<React.SetStateAction<[number[]]>>
+  setBoard: React.Dispatch<React.SetStateAction<number[]>>
 }
 export default function Board({ pieces, setPieces, board, setBoard }: Props) {
   const [{ isOver }, drop] = useDrop(() => ({
