@@ -1,7 +1,8 @@
 export default function Pieces() {
   return (
-    <>
-      <h1>Pieces</h1>
-    </>
+    <div>
+      {2 + 2}
+      <p>hey</p>
+    </div>
   )
 }
