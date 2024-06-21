@@ -5,6 +5,7 @@ interface Props {
   setBoard: React.Dispatch<React.SetStateAction<number[]>>
   setPieces: React.Dispatch<React.SetStateAction<number[]>>
   initialPieces: number[]
+  checkWin: (arr: number[]) => void
 }
 export default function Board({
   thing,
@@ -12,6 +13,7 @@ export default function Board({
   setBoard,
   setPieces,
   initialPieces,
+  checkWin,
 }: Props) {
   const [{ isOver }, drop] = useDrop(() => ({
     accept: 'image',
@@ -26,8 +28,10 @@ export default function Board({
       setBoard((prevBoard) => {
         const newBoard = [...prevBoard]
         newBoard[i] = number
+        if (newBoard.indexOf(90) === -1) checkWin(newBoard)
         return newBoard
       })
+
       const newPieces = [...prevPieces]
       const index = newPieces.indexOf(number)
       if (index === -1) {

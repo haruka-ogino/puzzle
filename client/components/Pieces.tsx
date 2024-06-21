@@ -31,5 +31,3 @@ export default function Pieces({ piece, i }: Props) {
     </li>
   )
 }
-
-// '../../public/soot-parts/image_part_001.png'

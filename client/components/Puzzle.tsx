@@ -18,10 +18,20 @@ export default function Puzzle() {
   const [pieces, setPieces] = useState(initialPieces)
   const initialBoard = Array.from({ length: 15 }, () => 90)
   const [board, setBoard] = useState(initialBoard)
+  const [win, setWin] = useState(false)
+
+  function checkWin(arr: number[]) {
+    let tempWin = true
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] !== i + 1) tempWin = false
+    }
+    setWin(tempWin)
+  }
 
   return (
     <>
       <h1>PUZZLE</h1>
+      {win && <p>You win!</p>}
       <div className="border-2">
         <ul className="flex">
           {board.map((piece, i) => (
@@ -32,6 +42,7 @@ export default function Puzzle() {
               setBoard={setBoard}
               setPieces={setPieces}
               initialPieces={initialPieces}
+              checkWin={checkWin}
             />
           ))}
         </ul>
