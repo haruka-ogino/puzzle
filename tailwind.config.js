@@ -8,6 +8,7 @@ export default {
       },
       width: {
         42: '42em',
+        45: '45em',
       },
     },
     colors: {
