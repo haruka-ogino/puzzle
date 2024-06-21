@@ -4,8 +4,15 @@ interface Props {
   i: number
   setBoard: React.Dispatch<React.SetStateAction<number[]>>
   setPieces: React.Dispatch<React.SetStateAction<number[]>>
+  initialPieces: number[]
 }
-export default function Board({ thing, i, setBoard, setPieces }: Props) {
+export default function Board({
+  thing,
+  i,
+  setBoard,
+  setPieces,
+  initialPieces,
+}: Props) {
   const [{ isOver }, drop] = useDrop(() => ({
     accept: 'image',
     drop: (item: { piece: number }) => placePiece(item.piece),
@@ -38,20 +45,20 @@ export default function Board({ thing, i, setBoard, setPieces }: Props) {
       const index = newBoard.indexOf(number)
       if (index === -1) {
         console.log('piece not found for removal')
-      } else {
-        newBoard[index] = 90
+        return prevBoard
       }
-      setPieces((prevPieces) => {
-        const newPieces = [...prevPieces]
-        const empty = newPieces.indexOf(90)
-        console.log(`the empty index is:${empty}`)
-
-        if (index !== -1) {
-          newPieces[empty] = number
-        }
-        return newPieces
-      })
+      newBoard[index] = 90
       return newBoard
+    })
+    setPieces((prevPieces) => {
+      const returnIndex = initialPieces.indexOf(number)
+      if (returnIndex !== -1) {
+        const newPieces = [...prevPieces]
+        newPieces[returnIndex] = number
+        return newPieces
+      } else {
+        return prevPieces
+      }
     })
   }
 

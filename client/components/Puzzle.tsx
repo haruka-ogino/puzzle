@@ -3,20 +3,21 @@ import Pieces from './Pieces'
 import Board from './Board'
 
 export default function Puzzle() {
-  // const initialPieces = Array.from({ length: 15 }, (_, index) => index + 1)
-  // // randomise order of pieces
-  // for (let i = initialPieces.length - 1; i > 0; i--) {
-  //   const j = Math.floor(Math.random() * (i + 1))
-  //   ;[initialPieces[i], initialPieces[j]] = [initialPieces[j], initialPieces[i]]
-  // }
+  const shuffledPieces = Array.from({ length: 15 }, (_, index) => index + 1)
 
-  const initialPieces = [1, 2, 3, 4, 5]
+  // randomise order of pieces
+  for (let i = shuffledPieces.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[shuffledPieces[i], shuffledPieces[j]] = [
+      shuffledPieces[j],
+      shuffledPieces[i],
+    ]
+  }
 
+  const [initialPieces] = useState(shuffledPieces)
   const [pieces, setPieces] = useState(initialPieces)
-  const [board, setBoard] = useState([90, 90, 90, 90, 90])
-
-  console.log(`board: [${board}]`)
-  console.log(`pieces: [${pieces}]`)
+  const initialBoard = Array.from({ length: 15 }, () => 90)
+  const [board, setBoard] = useState(initialBoard)
 
   return (
     <>
@@ -30,6 +31,7 @@ export default function Puzzle() {
               i={i}
               setBoard={setBoard}
               setPieces={setPieces}
+              initialPieces={initialPieces}
             />
           ))}
         </ul>
