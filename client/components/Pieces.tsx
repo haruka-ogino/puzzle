@@ -1,4 +1,10 @@
-export default function Pieces() {
+interface Props {
+  pieces: number[]
+  setPieces: React.Dispatch<React.SetStateAction<[number[]]>>
+  board: number[]
+  setBoard: React.Dispatch<React.SetStateAction<[number[]]>>
+}
+export default function Pieces({ pieces, setPieces, board, setBoard }: Props) {
   return (
     <div className="border-2  border-fuchsia-600">
       {2 + 2}
