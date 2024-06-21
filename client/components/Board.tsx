@@ -1,18 +1,24 @@
 import { useDrop } from 'react-dnd'
-export default function Board() {
-  // const [{ isOver }, drop] = useDrop(() => ({
-  //   accept: 'image',
-  //   drop: (item: { piece: number }) => placePiece(item.piece),
-  //   collect: (monitor) => ({
-  //     isOver: !!monitor.isOver(),
-  //   }),
-  // }))
 
-  const arr = [90, 90, 90, 90, 90]
+interface Props {
+  pieces: number[]
+  setPieces: React.Dispatch<React.SetStateAction<[number[]]>>
+  board: number[]
+  setBoard: React.Dispatch<React.SetStateAction<[number[]]>>
+}
+export default function Board({ pieces, setPieces, board, setBoard }: Props) {
+  const [{ isOver }, drop] = useDrop(() => ({
+    accept: 'image',
+    drop: (item: { piece: number }) => placePiece(item.piece),
+    collect: (monitor) => ({
+      isOver: !!monitor.isOver(),
+    }),
+  }))
+
   return (
     <div className="border-2">
       <ul>
-        {arr.map((piece, i) => (
+        {board.map((piece, i) => (
           <li key={i}>
             <img
               ref={drop}
