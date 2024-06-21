@@ -32,8 +32,8 @@ export default function Puzzle() {
     <>
       <h1>PUZZLE</h1>
       {win && <p>You win!</p>}
-      <div className="border-2">
-        <ul className="flex">
+      <div className="">
+        <ul className="w-42 flex min-h-[15em] flex-wrap items-center justify-center border-[0.2em]">
           {board.map((piece, i) => (
             <Board
               key={`${i}-board`}
@@ -48,7 +48,7 @@ export default function Puzzle() {
         </ul>
       </div>
       <section className="">
-        <ul className="border-dnd-active flex min-h-[15em] w-4/5 flex-wrap items-center justify-center border-[0.2em]">
+        <ul className="flex min-h-[15em] w-4/5 flex-wrap items-center justify-center border-[0.2em]">
           {pieces.map((piece, i) => (
             <Pieces
               key={`${i}-piece`}

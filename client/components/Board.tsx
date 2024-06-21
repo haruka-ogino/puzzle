@@ -67,7 +67,7 @@ export default function Board({
   }
 
   return (
-    <li key={i} className={'w-50px' + isOver ? ' bg-blue-200' : ''}>
+    <li key={i} className={'w-50px m-1 p-0' + isOver ? ' bg-blue-200' : ''}>
       {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
       <img
         ref={drop}
@@ -77,6 +77,7 @@ export default function Board({
             : `/soot-parts/image_part_0${thing}.png`
         }
         alt="piece"
+        className={`h-[7em] w-[7em] flex-none`}
         onClick={() => handleClick(thing)}
       />
     </li>
