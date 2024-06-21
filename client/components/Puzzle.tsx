@@ -15,7 +15,9 @@ export default function Puzzle() {
   const [pieces, setPieces] = useState(initialPieces)
   const [board, setBoard] = useState([90, 90, 90, 90, 90])
 
-  console.log(pieces)
+  console.log(`board: [${board}]`)
+  console.log(`pieces: [${pieces}]`)
+
   return (
     <>
       <h1>PUZZLE</h1>
