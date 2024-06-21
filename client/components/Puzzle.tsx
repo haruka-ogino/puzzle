@@ -19,13 +19,19 @@ export default function Puzzle() {
   return (
     <>
       <h1>PUZZLE</h1>
-
-      <Board
-        pieces={pieces}
-        setPieces={setPieces}
-        board={board}
-        setBoard={setBoard}
-      />
+      <div className="border-2">
+        <ul className="flex">
+          {board.map((piece, i) => (
+            <Board
+              key={`${i}-board`}
+              thing={piece}
+              i={i}
+              setBoard={setBoard}
+              setPieces={setPieces}
+            />
+          ))}
+        </ul>
+      </div>
       <div className="border-2  border-fuchsia-600">
         <ul className="flex">
           {pieces.map((piece, i) => (
