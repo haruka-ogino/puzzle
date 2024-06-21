@@ -16,8 +16,9 @@ export default function Puzzle() {
   return (
     <>
       <h1>PUZZLE</h1>
-      <Pieces />
+
       <Board />
+      <Pieces />
     </>
   )
 }
