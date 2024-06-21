@@ -36,8 +36,8 @@ export default function Puzzle() {
           ))}
         </ul>
       </div>
-      <div className="border-2  border-fuchsia-600">
-        <ul className="flex">
+      <section className="">
+        <ul className="border-dnd-active flex min-h-[15em] w-4/5 flex-wrap items-center justify-center border-[0.2em]">
           {pieces.map((piece, i) => (
             <Pieces
               key={`${i}-piece`}
@@ -47,7 +47,7 @@ export default function Puzzle() {
             />
           ))}
         </ul>
-      </div>
+      </section>
     </>
   )
 }

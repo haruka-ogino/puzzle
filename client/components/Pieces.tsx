@@ -14,7 +14,10 @@ export default function Pieces({ piece, i }: Props) {
   }))
 
   return (
-    <li key={i} className={'' + isDragging ? ' bg-blue-200' : ''}>
+    <li
+      key={i}
+      className={`m-1 p-0 ${isDragging ? 'border-dnd-active m-0 border-4 border-solid' : ''}`}
+    >
       <img
         ref={drag}
         src={
@@ -23,7 +26,7 @@ export default function Pieces({ piece, i }: Props) {
             : `/soot-parts/image_part_0${piece}.png`
         }
         alt="piece"
-        className="w-32"
+        className={`flex-none ${isDragging ? 'h-[4.5em] w-[4.5em]' : 'h-[5em] w-[5em]'}`}
       />
     </li>
   )

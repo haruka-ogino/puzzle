@@ -7,6 +7,9 @@ export default {
         sans: ['"Single Day"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
     },
+    colors: {
+      'dnd-active': '#339999',
+    },
   },
   plugins: [],
 }
