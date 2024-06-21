@@ -1,37 +1,31 @@
 import { useDrag } from 'react-dnd'
 
 interface Props {
-  pieces: number[]
-  setPieces: React.Dispatch<React.SetStateAction<number[]>>
-  board: number[]
-  setBoard: React.Dispatch<React.SetStateAction<number[]>>
+  piece: number
+  i: number
 }
-export default function Pieces({ pieces, setPieces, board, setBoard }: Props) {
+export default function Pieces({ piece, i }: Props) {
   const [{ isDragging }, drag] = useDrag(() => ({
     type: 'image',
-    item: { type: 'image' },
+    item: { type: 'image', piece },
     collect: (monitor) => ({
       isDragging: !!monitor.isDragging(),
     }),
   }))
+
   return (
-    <div className="border-2  border-fuchsia-600">
-      <ul>
-        {pieces.map((piece, i) => (
-          <li key={i} className={isDragging ? 'bg-blue-200' : ''}>
-            <img
-              ref={drag}
-              src={
-                piece < 10
-                  ? `/images/soot-parts-easy/image_part_00${piece}.png`
-                  : `/images/soot-parts-easy/image_part_0${piece}.png`
-              }
-              alt="piece"
-            />
-          </li>
-        ))}
-      </ul>
-    </div>
+    <li key={i} className={'' + isDragging ? ' bg-blue-200' : ''}>
+      <img
+        ref={drag}
+        src={
+          piece < 10
+            ? `/soot-parts/image_part_00${piece}.png`
+            : `/soot-parts/image_part_0${piece}.png`
+        }
+        alt="piece"
+        className="w-32"
+      />
+    </li>
   )
 }
 

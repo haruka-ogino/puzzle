@@ -26,12 +26,18 @@ export default function Puzzle() {
         board={board}
         setBoard={setBoard}
       />
-      <Pieces
-        pieces={pieces}
-        setPieces={setPieces}
-        board={board}
-        setBoard={setBoard}
-      />
+      <div className="border-2  border-fuchsia-600">
+        <ul className="flex">
+          {pieces.map((piece, i) => (
+            <Pieces
+              key={`${i}-piece`}
+              // url={handleUrl(number)}
+              piece={piece}
+              i={i}
+            />
+          ))}
+        </ul>
+      </div>
     </>
   )
 }
