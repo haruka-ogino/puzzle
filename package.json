@@ -23,7 +23,8 @@
   "license": "ISC",
   "dependencies": {
     "@tailwindcss/typography": "^0.5.13",
-    "superagent": "^8.1.2"
+    "superagent": "^8.1.2",
+    "react-dnd": "^16.0.1"
   },
   "devDependencies": {
     "@devacademy/eslint-config": "^1.9.1",
