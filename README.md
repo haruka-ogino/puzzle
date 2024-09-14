@@ -1,14 +1,8 @@
-# Phase 1 Boilerplate (+ Tailwind)
+# Jigsaw Puzzle
 
-## Packages Included
+## Project objectives
 
-- react
-- react-router-dom
-- @tanstack/react-query
-- vite
-- vitest
-- eslint
-- tailwind
+- implement React DnD (Drag and Drop)
 
 ## Setup
 
@@ -22,7 +16,3 @@
   ```
 
   </details>
-
----
-
-[Provide feedback on this repo](https://docs.google.com/forms/d/e/1FAIpQLSfw4FGdWkLwMLlUaNQ8FtP2CTJdGDUv6Xoxrh19zIrJSkvT4Q/viewform?usp=pp_url&entry.1958421517=boilerplate-phase1)
